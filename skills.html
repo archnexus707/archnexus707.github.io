@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-page="skills">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Skills — Dickson Godwin Massawe" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Skills | Dickson Godwin Massawe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"></span>
+        <span class="brand__text">DICKSON MASSAWE</span>
+      </a>
+
+      <nav class="tabs" aria-label="Primary navigation">
+        <a class="tab" href="index.html">Profile</a>
+        <a class="tab is-active" href="skills.html">Skills</a>
+        <a class="tab" href="projects.html">GitHub Projects</a>
+        <a class="tab" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="projects.html">View work</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="pageHead">
+      <h1 class="h1">Skills</h1>
+      <p class="lead">Security, development, and operations — structured for real engagements.</p>
+    </section>
+
+    <section class="grid3">
+      <div class="card hover">
+        <h2 class="h2">Offensive Security</h2>
+        <ul class="bullets">
+          <li>Web Application Penetration Testing (OWASP)</li>
+          <li>Vulnerability Assessment & Security Auditing</li>
+          <li>SQL Injection • XSS • CSRF testing</li>
+          <li>Red Teaming & Social Engineering</li>
+        </ul>
+      </div>
+
+      <div class="card hover">
+        <h2 class="h2">Engineering</h2>
+        <ul class="bullets">
+          <li>Python • Bash • PowerShell</li>
+          <li>JavaScript • PHP • C# • Java • C++</li>
+          <li>Automation for scanning & reporting</li>
+          <li>Documentation and technical leadership</li>
+        </ul>
+      </div>
+
+      <div class="card hover">
+        <h2 class="h2">Infrastructure</h2>
+        <ul class="bullets">
+          <li>Linux (Kali/Ubuntu) • Windows</li>
+          <li>Network Security: Firewall & VPN configuration</li>
+          <li>Cryptographic hashing & file integrity monitoring</li>
+          <li>Traffic analysis & troubleshooting</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Tooling</h2>
+        <p class="muted">Core tools I work with regularly.</p>
+      </div>
+
+      <div class="toolGrid">
+        <div class="tool hover">Burp Suite</div>
+        <div class="tool hover">Nmap</div>
+        <div class="tool hover">Metasploit</div>
+        <div class="tool hover">Wireshark</div>
+        <div class="tool hover">Amass</div>
+        <div class="tool hover">Ghidra</div>
+        <div class="tool hover">Apktool</div>
+        <div class="tool hover">Acunetix</div>
+        <div class="tool hover">ReadyAPI</div>
+        <div class="tool hover">Invicti</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="muted">© <span id="year"></span> Dickson Godwin Massawe</span>
+        <span class="muted">Ethical use only</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
