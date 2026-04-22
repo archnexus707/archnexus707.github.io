@@ -3,106 +3,283 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Skills — Dickson Godwin Massawe" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>Skills | Dickson Godwin Massawe</title>
+  <meta name="description" content="Arsenal — skills, tooling and capabilities." />
+  <meta name="theme-color" content="#050507" />
+  <title>DGM-707 // Arsenal</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050507'/><circle cx='16' cy='16' r='7' fill='none' stroke='%23ff2b4a' stroke-width='2'/><line x1='16' y1='4' x2='16' y2='28' stroke='%23ff2b4a' stroke-width='1.2'/><line x1='4' y1='16' x2='28' y2='16' stroke='%23ff2b4a' stroke-width='1.2'/></svg>">
 </head>
 
 <body>
+  <div class="bg-void" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="nav__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__mark"></span>
-        <span class="brand__text">DICKSON MASSAWE</span>
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="6" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="18" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/><line x1="1" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="18" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>
+          <span class="brand__text">DGM_707</span>
+          <span class="brand__sub">operator console</span>
+        </span>
       </a>
-
-      <nav class="tabs" aria-label="Primary navigation">
-        <a class="tab" href="index.html">Profile</a>
-        <a class="tab is-active" href="skills.html">Skills</a>
-        <a class="tab" href="projects.html">GitHub Projects</a>
-        <a class="tab" href="contact.html">Contact</a>
+      <nav class="tabs" id="tabs" aria-label="Primary">
+        <a class="tab" href="index.html">//&nbsp;Profile</a>
+        <a class="tab is-active" href="skills.html">//&nbsp;Arsenal</a>
+        <a class="tab" href="projects.html">//&nbsp;Operations</a>
+        <a class="tab" href="contact.html">//&nbsp;Comms</a>
       </nav>
-
-      <div class="nav__cta">
-        <a class="btn btn--ghost" href="projects.html">View work</a>
-      </div>
+      <button class="nav__kbd" id="cmdkOpen" aria-label="Open command palette">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search <kbd>⌘K</kbd>
+      </button>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span></button>
     </div>
   </header>
 
   <main class="container">
     <section class="pageHead">
-      <h1 class="h1">Skills</h1>
-      <p class="lead">Security, development, and operations — structured for real engagements.</p>
-    </section>
-
-    <section class="grid3">
-      <div class="card hover">
-        <h2 class="h2">Offensive Security</h2>
-        <ul class="bullets">
-          <li>Web Application Penetration Testing (OWASP)</li>
-          <li>Vulnerability Assessment & Security Auditing</li>
-          <li>SQL Injection • XSS • CSRF testing</li>
-          <li>Red Teaming & Social Engineering</li>
-        </ul>
+      <div>
+        <div class="pageHead__kicker">// DGM-707 / ARSENAL</div>
+        <h1>Arsenal</h1>
+        <p>Red team capabilities, defensive coverage, engineering skills and the tooling I run engagements with.</p>
       </div>
-
-      <div class="card hover">
-        <h2 class="h2">Engineering</h2>
-        <ul class="bullets">
-          <li>Python • Bash • PowerShell</li>
-          <li>JavaScript • PHP • C# • Java • C++</li>
-          <li>Automation for scanning & reporting</li>
-          <li>Documentation and technical leadership</li>
-        </ul>
-      </div>
-
-      <div class="card hover">
-        <h2 class="h2">Infrastructure</h2>
-        <ul class="bullets">
-          <li>Linux (Kali/Ubuntu) • Windows</li>
-          <li>Network Security: Firewall & VPN configuration</li>
-          <li>Cryptographic hashing & file integrity monitoring</li>
-          <li>Traffic analysis & troubleshooting</li>
-        </ul>
+      <div class="pageHead__aside">
+        MODULES: <b>3</b><br>
+        TOOLS: <b>12</b><br>
+        LAST SYNC: <b>today</b>
       </div>
     </section>
 
+    <!-- Skill modules -->
+    <div class="grid3">
+      <!-- Offensive -->
+      <div class="module">
+        <div class="module__head">
+          <div class="module__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h2 class="module__name">Offensive</h2>
+            <div class="module__tag">// red team / vapt</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Web Application Pentest <b>92%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="92"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">AD / Red Team Ops <b>85%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="85"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Vulnerability Research <b>80%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="80"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">API Pentesting <b>82%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="82"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Social Engineering / OSINT <b>78%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="78"></div></div>
+        </div>
+      </div>
+
+      <!-- Defensive -->
+      <div class="module module--cyan">
+        <div class="module__head">
+          <div class="module__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          </div>
+          <div>
+            <h2 class="module__name">Defensive</h2>
+            <div class="module__tag">// purple / soc</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">SOC L1–L3 Triage <b>88%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="88"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Threat Hunting <b>83%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="83"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">IBM QRadar / Cerebro2 <b>80%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="80"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Incident Response / DFIR <b>76%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="76"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">MITRE ATT&amp;CK Mapping <b>87%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="87"></div></div>
+        </div>
+      </div>
+
+      <!-- Engineering -->
+      <div class="module module--green">
+        <div class="module__head">
+          <div class="module__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
+          </div>
+          <div>
+            <h2 class="module__name">Engineering</h2>
+            <div class="module__tag">// dev / automation</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Python <b>90%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="90"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Bash / PowerShell <b>85%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="85"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Go / C++ <b>72%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="72"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">JS / PHP / C# <b>75%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="75"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar__label">Linux / Network Eng. <b>83%</b></div>
+          <div class="bar__track"><div class="bar__fill" data-pct="83"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Domain grid -->
     <section class="section">
       <div class="section__head">
-        <h2 class="h2">Tooling</h2>
-        <p class="muted">Core tools I work with regularly.</p>
+        <h2 class="section__title">Specializations</h2>
+        <span class="section__kicker">// focused areas of operation</span>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Web Application Security</h3>
+          <ul class="op__bullets" style="margin:0">
+            <li>OWASP Top 10 + beyond (SSRF, SSTI, HPP, race conditions)</li>
+            <li>Auth &amp; session attacks, JWT abuse, OAuth misconfigs</li>
+            <li>Business logic &amp; IDOR hunting</li>
+            <li>API (REST/GraphQL) pentesting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Red Team / AD</h3>
+          <ul class="op__bullets" style="margin:0">
+            <li>Initial access, privilege escalation, lateral movement</li>
+            <li>Kerberos abuse (Kerberoast, AS-REP, Silver/Golden)</li>
+            <li>C2 infra, AV/EDR evasion research</li>
+            <li>Persistence &amp; credential harvesting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Blue / Purple</h3>
+          <ul class="op__bullets" style="margin:0">
+            <li>SIEM detection engineering (QRadar rules)</li>
+            <li>Hypothesis-driven threat hunting</li>
+            <li>Log aggregation &amp; anomaly analysis</li>
+            <li>Phishing &amp; awareness testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tooling matrix -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">Tooling Matrix</h2>
+        <span class="section__kicker">// daily-driver stack</span>
       </div>
 
-      <div class="toolGrid">
-        <div class="tool hover">Burp Suite</div>
-        <div class="tool hover">Nmap</div>
-        <div class="tool hover">Metasploit</div>
-        <div class="tool hover">Wireshark</div>
-        <div class="tool hover">Amass</div>
-        <div class="tool hover">Ghidra</div>
-        <div class="tool hover">Apktool</div>
-        <div class="tool hover">Acunetix</div>
-        <div class="tool hover">ReadyAPI</div>
-        <div class="tool hover">Invicti</div>
+      <div class="tool-grid">
+        <div class="tool" data-cat="recon">Nmap</div>
+        <div class="tool" data-cat="recon">Amass</div>
+        <div class="tool" data-cat="web">Burp Suite</div>
+        <div class="tool" data-cat="web">Invicti</div>
+        <div class="tool" data-cat="web">Acunetix</div>
+        <div class="tool" data-cat="web">ReadyAPI</div>
+        <div class="tool" data-cat="exploit">Metasploit</div>
+        <div class="tool" data-cat="exploit">Hydra</div>
+        <div class="tool" data-cat="traffic">Wireshark</div>
+        <div class="tool" data-cat="traffic">tcpdump</div>
+        <div class="tool" data-cat="re">Ghidra</div>
+        <div class="tool" data-cat="re">Apktool</div>
+        <div class="tool" data-cat="siem">IBM QRadar</div>
+        <div class="tool" data-cat="siem">Cerebro2</div>
+        <div class="tool" data-cat="os">Kali / Parrot</div>
+      </div>
+    </section>
+
+    <!-- Methodology / engagement -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">Engagement Methodology</h2>
+        <span class="section__kicker">// how I run a job</span>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="section__kicker" style="margin-bottom:8px;color:var(--red)">// PHASE 01</div>
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Scope &amp; Recon</h3>
+          <p class="muted" style="color:var(--fg-1);font-size:13.5px;margin:0">
+            Rules of engagement, target validation, passive &amp; active recon, attack surface mapping.
+          </p>
+        </div>
+        <div class="card">
+          <div class="section__kicker" style="margin-bottom:8px;color:var(--amber)">// PHASE 02</div>
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Exploit &amp; Pivot</h3>
+          <p class="muted" style="color:var(--fg-1);font-size:13.5px;margin:0">
+            Manual testing, exploitation, privilege escalation, lateral movement, persistence validation.
+          </p>
+        </div>
+        <div class="card">
+          <div class="section__kicker" style="margin-bottom:8px;color:var(--green)">// PHASE 03</div>
+          <h3 style="margin:0 0 8px;font-family:var(--display)">Report &amp; Retest</h3>
+          <p class="muted" style="color:var(--fg-1);font-size:13.5px;margin:0">
+            Executive summary, technical findings with PoCs, remediation guidance, retest &amp; sign-off.
+          </p>
+        </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <span class="muted">© <span id="year"></span> Dickson Godwin Massawe</span>
-        <span class="muted">Ethical use only</span>
+      <div class="footer__grid">
+        <span>© <span id="year"></span> DICKSON GODWIN MASSAWE</span>
+        <span class="footer__center">// authorized engagements only</span>
+        <span class="footer__end"><a href="contact.html">OPEN SECURE CHANNEL ↗</a></span>
       </div>
     </footer>
   </main>
+
+  <div class="hud" role="status">
+    <span class="hud__dot" aria-hidden="true"></span>
+    <span>OPERATOR: <b>DGM-707</b></span>
+    <span class="hud__sep">│</span>
+    <span class="hud__mobile-hide">MODULE: <b style="color:var(--cyan)">ARSENAL</b></span>
+    <span class="hud__sep hud__mobile-hide">│</span>
+    <span class="hud__mobile-hide">COVERAGE: <b style="color:var(--green)">HIGH</b></span>
+    <div class="hud__right"><span>v4.7</span></div>
+  </div>
+
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cmdk__box">
+      <input class="cmdk__input" id="cmdkInput" placeholder="> type a command…" autocomplete="off" spellcheck="false"/>
+      <div class="cmdk__list" id="cmdkList"></div>
+    </div>
+  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
