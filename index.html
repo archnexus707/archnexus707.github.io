@@ -2,203 +2,503 @@
 <html lang="en" data-page="home">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Dickson Godwin Massawe — Cybersecurity Specialist | Web Application Security | Red Team" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>Dickson Godwin Massawe | Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Dickson Godwin Massawe — Red Team Operator, Web Application Pentester, Purple Team. Dar es Salaam, Tanzania." />
+  <meta name="theme-color" content="#050507" />
+  <title>DGM-707 // Operator Console — Dickson Godwin Massawe</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050507'/><circle cx='16' cy='16' r='7' fill='none' stroke='%23ff2b4a' stroke-width='2'/><line x1='16' y1='4' x2='16' y2='28' stroke='%23ff2b4a' stroke-width='1.2'/><line x1='4' y1='16' x2='28' y2='16' stroke='%23ff2b4a' stroke-width='1.2'/></svg>">
 </head>
 
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <!-- Boot sequence overlay -->
+  <div class="boot" id="boot" role="status" aria-live="polite">
+    <button class="boot__skip" id="bootSkip" aria-label="Skip intro">SKIP ▸</button>
+    <div id="bootLines"></div>
+  </div>
 
+  <!-- Ambient backdrop -->
+  <div class="bg-void" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- Top nav -->
   <header class="nav">
     <div class="nav__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__mark"></span>
-        <span class="brand__text">DICKSON MASSAWE</span>
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__mark" aria-hidden="true">
+          <!-- crosshair -->
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="6" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="18" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/><line x1="1" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="18" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>
+          <span class="brand__text">DGM_707</span>
+          <span class="brand__sub">operator console</span>
+        </span>
       </a>
 
-      <nav class="tabs" aria-label="Primary navigation">
-        <a class="tab is-active" href="index.html">Profile</a>
-        <a class="tab" href="skills.html">Skills</a>
-        <a class="tab" href="projects.html">GitHub Projects</a>
-        <a class="tab" href="contact.html">Contact</a>
+      <nav class="tabs" id="tabs" aria-label="Primary">
+        <a class="tab is-active" href="index.html">//&nbsp;Profile</a>
+        <a class="tab" href="skills.html">//&nbsp;Arsenal</a>
+        <a class="tab" href="projects.html">//&nbsp;Operations</a>
+        <a class="tab" href="contact.html">//&nbsp;Comms</a>
       </nav>
 
-      <div class="nav__cta">
-        <a class="btn btn--ghost" href="projects.html">View work</a>
-      </div>
+      <button class="nav__kbd" id="cmdkOpen" aria-label="Open command palette">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search
+        <kbd>⌘K</kbd>
+      </button>
+
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span></button>
     </div>
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero__left">
-        <div class="chips">
-          <span class="chip">Cybersecurity Specialist</span>
-          <span class="chip">Web App Pentesting</span>
-          <span class="chip">Red Team</span>
-          <span class="chip">Threat Intelligence</span>
-        </div>
+        <span class="hero__classify">
+          CLASSIFIED // CLEARANCE: RED TEAM
+        </span>
 
-        <h1 class="h1">
-          Dickson Godwin Massawe
+        <div class="hero__typed" id="typed"></div>
+
+        <h1 class="hero__name" data-glitch="1">
+          <span class="tk">Dickson</span> <span class="tk">Godwin</span> <span class="tk">Massawe</span>
         </h1>
 
-        <p class="lead">
-          Cybersecurity specialist and software developer focused on web application security,
-          vulnerability assessment, security auditing, and automation.
+        <div class="hero__role">
+          <b>Red Team Operator</b><span class="sep">•</span>
+          <b>Purple Team</b><span class="sep">•</span>
+          <b>Web App Pentester</b><span class="sep">•</span>
+          <b>SOC L1–L3</b>
+        </div>
+
+        <p class="hero__lead">
+          Offensive security engineer working across red team adversary simulation,
+          SOC triage &amp; threat hunting, web application penetration testing, and
+          custom tooling for VAPT engagements. Operating out of Dar es Salaam, Tanzania.
         </p>
 
-        <div class="quick">
-          <div class="quick__item">
-            <div class="k">Location</div>
-            <div class="v">Dar es Salaam, Tanzania</div>
+        <div class="hero__chips">
+          <span class="chip chip--red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+            VAPT
+          </span>
+          <span class="chip chip--red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+            APT Simulation
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
+            MITRE ATT&amp;CK
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v6H4zM4 14h16v6H4z"/><path d="M8 7h.01M8 17h.01"/></svg>
+            SIEM (QRadar)
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+            OWASP Top 10
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            AD Red Team
+          </span>
+        </div>
+
+        <div class="hero__meta">
+          <div>
+            <div class="k">// Location</div>
+            <div class="v">Dar es Salaam, TZ</div>
           </div>
-          <div class="quick__item">
-            <div class="k">Email</div>
-            <div class="v"><button class="linkBtn" data-copy="dicksonmassawe707@gmail.com">dicksonmassawe707@gmail.com</button></div>
+          <div>
+            <div class="k">// Email</div>
+            <div class="v"><button data-copy="dicksonmassawe707@gmail.com" aria-label="Copy email">dicksonmassawe707@gmail.com</button></div>
           </div>
-          <div class="quick__item">
-            <div class="k">LinkedIn</div>
-            <div class="v"><a class="link" href="https://tz.linkedin.com/in/dickson-godwin-963114249" target="_blank" rel="noreferrer">Open profile</a></div>
+          <div>
+            <div class="k">// LinkedIn</div>
+            <div class="v"><a href="https://tz.linkedin.com/in/dickson-godwin-963114249" target="_blank" rel="noreferrer">open profile ↗</a></div>
           </div>
         </div>
 
-        <div class="hero__actions">
-          <a class="btn" href="projects.html">Explore Projects</a>
-          <a class="btn btn--ghost" href="contact.html">Contact</a>
+        <div class="hero__cta">
+          <a class="btn" href="projects.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            View Operations
+          </a>
+          <a class="btn btn--ghost" href="contact.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 15.5a5 5 0 0 0 0-7"/></svg>
+            Open secure channel
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/archnexus707" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.7.1 3 .7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            GitHub
+          </a>
         </div>
-
-        <p class="note">
-          <span class="dot"></span>
-          Only ethical, authorized security work.
-        </p>
       </div>
 
+      <!-- Operator ID card -->
       <aside class="hero__right">
-        <div class="panel">
-          <div class="panel__top">
-            <span class="led red"></span><span class="led amber"></span><span class="led green"></span>
-            <span class="panel__title">Overview</span>
+        <div class="idcard">
+          <div class="idcard__top">
+            <span>// OPERATOR IDENTIFICATION</span>
+            <span class="idcard__dots"><i></i><i></i><i></i></span>
           </div>
 
-          <div class="panel__body">
-            <div class="stat">
-              <div class="stat__n">Web App Security</div>
-              <div class="stat__d">SQLi • XSS • CSRF • OWASP testing</div>
+          <div class="idcard__photo">
+            <img src="portfolio_pullneck.jpg" alt="Dickson Godwin Massawe — operator portrait" onerror="this.style.display='none'"/>
+            <div class="idcard__scan"></div>
+            <div class="idcard__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="idcard__badge">ID: <b>DGM-707</b> // VERIFIED</div>
+          </div>
+
+          <div class="idcard__info">
+            <div>
+              <div class="k">Codename</div>
+              <div class="v red">archnexus707</div>
             </div>
-            <div class="stat">
-              <div class="stat__n">Automation</div>
-              <div class="stat__d">Python • Bash • PowerShell</div>
+            <div>
+              <div class="k">Status</div>
+              <div class="v green">● ACTIVE</div>
             </div>
-            <div class="stat">
-              <div class="stat__n">Toolchain</div>
-              <div class="stat__d">Burp • Nmap • Metasploit • Wireshark • Amass • Ghidra</div>
+            <div>
+              <div class="k">Division</div>
+              <div class="v">Purple Team</div>
             </div>
+            <div>
+              <div class="k">Clearance</div>
+              <div class="v red">RED // L3</div>
+            </div>
+            <div>
+              <div class="k">AO</div>
+              <div class="v">Dar es Salaam</div>
+            </div>
+            <div>
+              <div class="k">Years Op</div>
+              <div class="v">5+</div>
+            </div>
+          </div>
+
+          <div class="idcard__threat">
+            <span>THREAT LEVEL</span>
+            <div class="idcard__bars" aria-hidden="true">
+              <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span>
+            </div>
+            <b>HIGH</b>
           </div>
         </div>
       </aside>
     </section>
 
+    <!-- CAPABILITY MATRIX -->
     <section class="section">
       <div class="section__head">
-        <h2 class="h2">Experience</h2>
-        <p class="muted">Selected roles from 2020 → present.</p>
+        <h2 class="section__title">Capability Matrix</h2>
+        <span class="section__kicker">// <b>5</b> active capabilities</span>
       </div>
-
-      <div class="timeline">
-        <div class="tcard hover">
-          <div class="tmeta">
-            <span class="pill">Jun 2024 — Present</span>
-            <span class="pill pill--soft">UrchinSec Community</span>
+      <div class="matrix">
+        <div class="matrix__cell">
+          <div class="matrix__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <h3 class="h3">Software Developer • Web Penetration Tester • Red Team</h3>
-          <ul class="bullets">
-            <li>Security-focused development, documentation, and technical leadership.</li>
-            <li>Workflows for testing, reporting, and remediation support.</li>
-          </ul>
+          <div class="matrix__name">Web Pentest</div>
+          <div class="matrix__desc">SQLi, XSS, CSRF, SSRF, OWASP Top 10, API security.</div>
         </div>
-
-        <div class="tcard hover">
-          <div class="tmeta">
-            <span class="pill">Nov 2023 — Mar 2024</span>
-            <span class="pill pill--soft">CyberGen</span>
+        <div class="matrix__cell">
+          <div class="matrix__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
           </div>
-          <h3 class="h3">Web Penetration Tester • Red Team</h3>
-          <ul class="bullets">
-            <li>Web application penetration testing using OWASP methodologies.</li>
-            <li>Custom scripts to support scanning, verification, and reporting.</li>
-          </ul>
+          <div class="matrix__name">Red Team / APT</div>
+          <div class="matrix__desc">Adversary simulation, lateral movement, C2, persistence.</div>
         </div>
-
-        <div class="tcard hover">
-          <div class="tmeta">
-            <span class="pill">Jun 2022 — Jul 2023</span>
-            <span class="pill pill--soft">TIRDO</span>
+        <div class="matrix__cell">
+          <div class="matrix__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <h3 class="h3">Network Security Specialist</h3>
-          <ul class="bullets">
-            <li>Firewall/VPN support, network hardening, monitoring, and documentation.</li>
-          </ul>
+          <div class="matrix__name">SOC L1–L3</div>
+          <div class="matrix__desc">SIEM triage, correlation rules, threat hunting on QRadar.</div>
         </div>
-
-        <div class="tcard hover">
-          <div class="tmeta">
-            <span class="pill">Jan 2020 — Jul 2021</span>
-            <span class="pill pill--soft">Owntechsict</span>
+        <div class="matrix__cell">
+          <div class="matrix__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
           </div>
-          <h3 class="h3">Software Developer</h3>
-          <ul class="bullets">
-            <li>Systems programming support, client requirements, documentation, and delivery.</li>
-          </ul>
+          <div class="matrix__name">Threat Intel</div>
+          <div class="matrix__desc">IOC analysis, attribution, MITRE ATT&amp;CK mapping.</div>
+        </div>
+        <div class="matrix__cell">
+          <div class="matrix__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
+          </div>
+          <div class="matrix__name">Offensive Tooling</div>
+          <div class="matrix__desc">Python/Bash/PS automation, C2 agents, fuzzing frameworks.</div>
         </div>
       </div>
     </section>
 
+    <!-- OPERATIONS TIMELINE -->
     <section class="section">
-      <div class="grid2">
-        <div class="card hover">
-          <h2 class="h2">Education</h2>
-          <ul class="bullets">
-            <li>Bachelor in Information Security </li>
-            <li>Diploma in Information Technology</li>
-            <li>Diploma in Ethical Hacking </li>
+      <div class="section__head">
+        <h2 class="section__title">Mission Log</h2>
+        <span class="section__kicker">// current &amp; previous engagements</span>
+      </div>
+
+      <div class="ops">
+        <article class="op is-active">
+          <div class="op__head">
+            <span class="op__status active">ACTIVE</span>
+            <span class="op__date">FEB 2026 — PRESENT</span>
+            <span class="op__org">@ Simba Cyber</span>
+          </div>
+          <h3 class="op__role">Purple Team Operator</h3>
+          <ul class="op__bullets">
+            <li>Advanced penetration testing across web, network, and Active Directory environments.</li>
+            <li>Red Team adversary simulations emulating APT tactics; validating detection &amp; response.</li>
+            <li>SOC L1→L3: alert triage, investigation, attack-chain reconstruction, malware behavior analysis.</li>
+            <li>Developing &amp; tuning IBM QRadar correlation rules; hypothesis-driven threat hunting.</li>
+            <li>MITRE ATT&amp;CK-aligned detection engineering across endpoints, network &amp; cloud.</li>
+          </ul>
+        </article>
+
+        <article class="op">
+          <div class="op__head">
+            <span class="op__status archived">ARCHIVED</span>
+            <span class="op__date">JUN 2024 — DEC 2025</span>
+            <span class="op__org">@ UrchinSec Community</span>
+          </div>
+          <h3 class="op__role">Software Developer · Web Pentester · Red Team</h3>
+          <ul class="op__bullets">
+            <li>Security-focused development, documentation &amp; technical leadership.</li>
+            <li>Built testing, reporting and remediation workflows for the community engagement pipeline.</li>
+            <li>Trained subordinates in secure coding and offensive tradecraft.</li>
+          </ul>
+        </article>
+
+        <article class="op">
+          <div class="op__head">
+            <span class="op__status archived">ARCHIVED</span>
+            <span class="op__date">NOV 2023 — MAR 2024</span>
+            <span class="op__org">@ CyberGen</span>
+          </div>
+          <h3 class="op__role">Web Penetration Tester · Red Team</h3>
+          <ul class="op__bullets">
+            <li>OWASP-methodology web application penetration testing.</li>
+            <li>Custom scripts &amp; tooling for automated scanning, verification &amp; reporting.</li>
+            <li>Red team exercises simulating APT behavior to validate incident response.</li>
+          </ul>
+        </article>
+
+        <article class="op">
+          <div class="op__head">
+            <span class="op__status archived">ARCHIVED</span>
+            <span class="op__date">JUN 2022 — JUL 2023</span>
+            <span class="op__org">@ TIRDO</span>
+          </div>
+          <h3 class="op__role">Network Security Specialist</h3>
+          <ul class="op__bullets">
+            <li>Sophos XG firewall deployment &amp; hardening; VPN configuration.</li>
+            <li>Network monitoring, traffic analysis, and security-controls documentation.</li>
+          </ul>
+        </article>
+
+        <article class="op">
+          <div class="op__head">
+            <span class="op__status archived">ARCHIVED</span>
+            <span class="op__date">JAN 2020 — JUL 2021</span>
+            <span class="op__org">@ Owntechsict</span>
+          </div>
+          <h3 class="op__role">Software Developer</h3>
+          <ul class="op__bullets">
+            <li>Systems programming, requirements analysis &amp; delivery for client platforms.</li>
+            <li>Coordinated system installations and end-user training.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- HALL OF FAME / TROPHIES -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">Hall of Fame</h2>
+        <span class="section__kicker">// captures &amp; wins</span>
+      </div>
+      <div class="trophies">
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2h3v5a5 5 0 0 1-5 5h-.2A6 6 0 0 1 13 18v2h3v2H8v-2h3v-2a6 6 0 0 1-2.8-4H8a5 5 0 0 1-5-5V4h3V2zm0 4H5v3a3 3 0 0 0 3 3V6zm12 0v6a3 3 0 0 0 3-3V6h-3z"/></svg>
+            1ST PLACE
+          </div>
+          <h3 class="trophy__title">CtfZone Marathon</h3>
+          <div class="trophy__issuer">CtfZone · 2026</div>
+        </div>
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2h3v5a5 5 0 0 1-5 5h-.2A6 6 0 0 1 13 18v2h3v2H8v-2h3v-2a6 6 0 0 1-2.8-4H8a5 5 0 0 1-5-5V4h3V2zm0 4H5v3a3 3 0 0 0 3 3V6zm12 0v6a3 3 0 0 0 3-3V6h-3z"/></svg>
+            1ST PLACE
+          </div>
+          <h3 class="trophy__title">Unique Academy CTF</h3>
+          <div class="trophy__issuer">Unique Academy · 2026</div>
+        </div>
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h12v2h3v5a5 5 0 0 1-5 5h-.2A6 6 0 0 1 13 18v2h3v2H8v-2h3v-2a6 6 0 0 1-2.8-4H8a5 5 0 0 1-5-5V4h3V2zm0 4H5v3a3 3 0 0 0 3 3V6zm12 0v6a3 3 0 0 0 3-3V6h-3z"/></svg>
+            1ST RUNNER UP
+          </div>
+          <h3 class="trophy__title">Cyber Sanifu League (CPL)</h3>
+          <div class="trophy__issuer">Sanifu Org · 2026</div>
+        </div>
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+            HALL OF FAME
+          </div>
+          <h3 class="trophy__title">HackTheBox — Tanzania</h3>
+          <div class="trophy__issuer">HTB · 2024</div>
+        </div>
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-3.09 1.62.59-3.43L7 10.76l3.45-.5L12 7.1l1.55 3.16 3.45.5-2.5 2.43.59 3.43z"/></svg>
+            1ST CLASS HONORS
+          </div>
+          <h3 class="trophy__title">Academic Excellence</h3>
+          <div class="trophy__issuer">Unique Academy · 2024</div>
+        </div>
+        <div class="trophy">
+          <div class="trophy__rank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            RED TEAM PROLABS
+          </div>
+          <h3 class="trophy__title">Dante · RastaLab · Cybernetics</h3>
+          <div class="trophy__issuer">HackTheBox ProLabs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS + EDU -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="section__title">Credentials</h2>
+        <span class="section__kicker">// certifications &amp; training</span>
+      </div>
+
+      <div class="certs">
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">eJPTv2 — Junior Penetration Tester</p>
+            <div class="cert__issuer">INE · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">AD Red Team Specialist (AD-RTS)</p>
+            <div class="cert__issuer">CyberWarfare Labs · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">Web Red Team Analyst (WEB-RTA)</p>
+            <div class="cert__issuer">CyberWarfare Labs · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">Multi-Cloud Blue Team Analyst (MCBTA)</p>
+            <div class="cert__issuer">CyberWarfare Labs · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">Certified Threat Intelligence Analyst</p>
+            <div class="cert__issuer">arcX · 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9-9 10-5.5-1-9-5-9-10V6z"/></svg>
+          </div>
+          <div class="cert__body">
+            <p class="cert__name">Ethical Hacking Essentials (EHE)</p>
+            <div class="cert__issuer">EC-Council · 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:18px">
+        <div class="card">
+          <div class="section__kicker" style="margin-bottom:10px">// EDUCATION</div>
+          <h3 style="margin:0 0 10px;font-family:var(--display)">Academic Track</h3>
+          <ul class="op__bullets" style="margin:0">
+            <li><b>BSc Information Security</b> — Unique Academy (ongoing, 2024–)</li>
+            <li>Diploma in Information Technology — Unique Academy (2021–2023)</li>
+            <li>Diploma in Ethical Hacking — Alison, Greenwich IE (2024–2025)</li>
           </ul>
         </div>
-
-        <div class="card hover">
-          <h2 class="h2">Certifications</h2>
-          <ul class="bullets">
-            <li>EC-Council — Ethical Hacking Essentials (EHE)</li>
-            <li>INE — eJPTv2</li>
-            <li>Threat Intelligence Analyst — arcX</li>
-            <li>CyberWarfare — CRTA / AD-RTS / MCBTA / WEB-RTA</li>
+        <div class="card">
+          <div class="section__kicker" style="margin-bottom:10px">// ADDITIONAL TRAINING</div>
+          <h3 style="margin:0 0 10px;font-family:var(--display)">Lab / Platform Certs</h3>
+          <ul class="op__bullets" style="margin:0">
+            <li>TryHackMe — CompTIA Pentest+, Red Teaming, Jr Penetration Tester</li>
+            <li>HackTheBox ProLabs — Dante, RastaLab, Cybernetics</li>
+            <li>APISEC University — API Penetration Testing</li>
+            <li>CISCO Networking Academy — Intro to Cybersecurity, Ethical Hacking</li>
           </ul>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <span class="muted">© <span id="year"></span> Dickson Godwin Massawe</span>
-        <span class="muted">Built on GitHub Pages</span>
+      <div class="footer__grid">
+        <span>© <span id="year"></span> DICKSON GODWIN MASSAWE</span>
+        <span class="footer__center">// authorized engagements only</span>
+        <span class="footer__end">PUSH <kbd style="font-family:var(--mono);padding:2px 6px;border:1px solid var(--stroke-2);border-radius:3px">⌘K</kbd> FOR CONSOLE</span>
       </div>
     </footer>
   </main>
+
+  <!-- HUD status bar -->
+  <div class="hud" role="status">
+    <span class="hud__dot" aria-hidden="true"></span>
+    <span>OPERATOR: <b>DGM-707</b></span>
+    <span class="hud__sep">│</span>
+    <span class="hud__mobile-hide">STATUS: <b style="color:var(--green)">ACTIVE</b></span>
+    <span class="hud__sep hud__mobile-hide">│</span>
+    <span class="hud__mobile-hide">LOC: <b>DAR_ES_SALAAM</b></span>
+    <div class="hud__right">
+      <span class="hud__mobile-hide">NET: <b style="color:var(--cyan)">SECURE</b></span>
+      <span>v4.7</span>
+    </div>
+  </div>
+
+  <!-- Command palette -->
+  <div class="cmdk" id="cmdk" role="dialog" aria-label="Command palette" aria-modal="true">
+    <div class="cmdk__box">
+      <input class="cmdk__input" id="cmdkInput" placeholder="> type a command… (whoami, goto skills, nmap…)" autocomplete="off" spellcheck="false" />
+      <div class="cmdk__list" id="cmdkList"></div>
+    </div>
+  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>
-
 </html>
-
-
