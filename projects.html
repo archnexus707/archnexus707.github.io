@@ -3,81 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="GitHub Projects — Dickson Godwin Massawe" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>GitHub Projects | Dickson Godwin Massawe</title>
+  <meta name="description" content="Operations — featured security tools, research, GitHub repos." />
+  <meta name="theme-color" content="#050507" />
+  <title>DGM-707 // Operations</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050507'/><circle cx='16' cy='16' r='7' fill='none' stroke='%23ff2b4a' stroke-width='2'/><line x1='16' y1='4' x2='16' y2='28' stroke='%23ff2b4a' stroke-width='1.2'/><line x1='4' y1='16' x2='28' y2='16' stroke='%23ff2b4a' stroke-width='1.2'/></svg>">
 </head>
 
 <body>
+  <div class="bg-void" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="nav__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__mark"></span>
-        <span class="brand__text">DICKSON MASSAWE</span>
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="6" stroke="currentColor" stroke-width="1.6"/><line x1="12" y1="18" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/><line x1="1" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.6"/><line x1="18" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>
+          <span class="brand__text">DGM_707</span>
+          <span class="brand__sub">operator console</span>
+        </span>
       </a>
-
-      <nav class="tabs" aria-label="Primary navigation">
-        <a class="tab" href="index.html">Profile</a>
-        <a class="tab" href="skills.html">Skills</a>
-        <a class="tab is-active" href="projects.html">GitHub Projects</a>
-        <a class="tab" href="contact.html">Contact</a>
+      <nav class="tabs" id="tabs" aria-label="Primary">
+        <a class="tab" href="index.html">//&nbsp;Profile</a>
+        <a class="tab" href="skills.html">//&nbsp;Arsenal</a>
+        <a class="tab is-active" href="projects.html">//&nbsp;Operations</a>
+        <a class="tab" href="contact.html">//&nbsp;Comms</a>
       </nav>
-
-      <div class="nav__cta">
-        <a class="btn btn--ghost" href="contact.html">Hire / Collaborate</a>
-      </div>
+      <button class="nav__kbd" id="cmdkOpen" aria-label="Open command palette">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search <kbd>⌘K</kbd>
+      </button>
+      <button class="nav__burger" id="burger" aria-label="Menu"><span></span></button>
     </div>
   </header>
 
   <main class="container">
     <section class="pageHead">
-      <h1 class="h1">GitHub Projects</h1>
-      <p class="lead">Featured repos + an auto-synced list from your GitHub profile.</p>
-    </section>
-
-    <section class="section">
-      <div class="section__head">
-        <h2 class="h2">Featured</h2>
-        <p class="muted">Curated highlights (click to open on GitHub).</p>
+      <div>
+        <div class="pageHead__kicker">// DGM-707 / OPERATIONS</div>
+        <h1>Operations</h1>
+        <p>Featured security research &amp; tooling, plus a live feed of every public repository. Click any card to open it on GitHub.</p>
       </div>
-
-      <div class="grid2" id="featured"></div>
+      <div class="pageHead__aside">
+        HANDLE: <b>archnexus707</b><br>
+        CHANNELS: <b>GitHub API</b><br>
+        SYNC: <b>live</b>
+      </div>
     </section>
 
+    <!-- FEATURED -->
+    <section class="section" style="margin-top:0">
+      <div class="section__head">
+        <h2 class="section__title">Featured Ordnance</h2>
+        <span class="section__kicker">// curated research &amp; tooling</span>
+      </div>
+      <div class="grid3" id="featured"></div>
+    </section>
+
+    <!-- ALL REPOS -->
     <section class="section">
       <div class="section__head">
-        <h2 class="h2">All repositories</h2>
-        <p class="muted">Live data loaded from GitHub API (sorted by last updated).</p>
+        <h2 class="section__title">All Repositories</h2>
+        <span class="section__kicker">// sorted by last update</span>
       </div>
 
       <div class="filters">
-        <input class="input" id="q" placeholder="Search repos (name/description)…" autocomplete="off" />
+        <input class="input" id="q" placeholder="> search repositories (name, description)…" autocomplete="off" spellcheck="false"/>
         <select class="select" id="lang">
-          <option value="">All languages</option>
+          <option value="">ALL LANGUAGES</option>
         </select>
       </div>
 
       <div class="grid3" id="repoGrid"></div>
 
-      <p class="muted small" id="repoStatus"></p>
+      <p class="repo-status" id="repoStatus"></p>
     </section>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <span class="muted">© <span id="year"></span> Dickson Godwin Massawe</span>
-        <span class="muted"><a class="link" href="https://github.com/archnexus707" target="_blank" rel="noreferrer">GitHub</a></span>
+      <div class="footer__grid">
+        <span>© <span id="year"></span> DICKSON GODWIN MASSAWE</span>
+        <span class="footer__center">// live feed · github api</span>
+        <span class="footer__end"><a href="https://github.com/archnexus707" target="_blank" rel="noreferrer">GITHUB ↗</a></span>
       </div>
     </footer>
   </main>
+
+  <div class="hud" role="status">
+    <span class="hud__dot" aria-hidden="true"></span>
+    <span>OPERATOR: <b>DGM-707</b></span>
+    <span class="hud__sep">│</span>
+    <span class="hud__mobile-hide">FEED: <b style="color:var(--cyan)">GITHUB</b></span>
+    <span class="hud__sep hud__mobile-hide">│</span>
+    <span class="hud__mobile-hide">MODE: <b style="color:var(--green)">READ</b></span>
+    <div class="hud__right"><span>v4.7</span></div>
+  </div>
+
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cmdk__box">
+      <input class="cmdk__input" id="cmdkInput" placeholder="> type a command…" autocomplete="off" spellcheck="false"/>
+      <div class="cmdk__list" id="cmdkList"></div>
+    </div>
+  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
