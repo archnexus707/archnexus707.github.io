@@ -954,3 +954,31 @@ img{max-width:100%;display:block}
 .mono{font-family:var(--mono)}
 .muted{color:var(--fg-2)}
 .small{font-size:12px}
+
+/* --------- Responsible Disclosure Table --------- */
+.disc-table{display:flex;flex-direction:column;gap:2px}
+.disc-row{
+  display:grid;grid-template-columns:260px 1fr 100px;gap:16px;
+  align-items:center;
+  padding:14px 18px;
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:6px;
+  transition:border-color .2s,background .2s;
+}
+.disc-row:hover{border-color:var(--stroke-2);background:rgba(255,255,255,.04)}
+.disc-col--project{display:flex;flex-direction:column;gap:5px}
+.disc-tag{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:var(--cyan);text-transform:uppercase;
+}
+.disc-tag--credit{color:var(--fg-2)}
+.disc-name{font-family:var(--display);font-size:14px;font-weight:600;color:var(--fg)}
+.disc-col--desc{font-size:13px;color:var(--fg-2);line-height:1.5}
+.disc-col--link{text-align:right;font-family:var(--mono);font-size:11px}
+.disc-col--link a{color:var(--cyan)}
+.disc-col--link a:hover{color:var(--red)}
+@media (max-width:860px){
+  .disc-row{grid-template-columns:1fr;gap:8px}
+  .disc-col--link{text-align:left}
+}
