@@ -524,10 +524,11 @@ img{max-width:100%;display:block}
 
 /* --------- Threat matrix / capability strip --------- */
 .matrix{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
   margin-top:32px;
 }
 @media (max-width:900px){.matrix{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.matrix{grid-template-columns:1fr}}
 .matrix__cell{
   position:relative;
   padding:16px 14px;

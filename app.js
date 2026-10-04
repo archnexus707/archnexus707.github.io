@@ -112,9 +112,9 @@ $$("[data-copy]").forEach(btn => {
   const el = $("#typed");
   if (!el) return;
   const phrases = [
-    "Red team operator online. Target engagement authorized.",
-    "Purple team ready. MITRE ATT&CK mapping active.",
-    "Scanning perimeter … 0 false positives.",
+    "Head of Cybersecurity online. Engagement authorized.",
+    "Red team operator ready. MITRE ATT&CK mapping active.",
+    "Responsible disclosure channel open. Coordinating fixes.",
     "Threat intel feed syncing … IOCs up to date."
   ];
   let p = 0, i = 0, deleting = false;
